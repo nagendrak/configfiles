@@ -1,0 +1,3 @@
+NrrwRgn-0.25.vmb: call delete('/home/knagendr/.vim/plugin/NrrwRgn.vim')|call delete('/home/knagendr/.vim/autoload/nrrwrgn.vim')|call delete('/home/knagendr/.vim/doc/NarrowRegion.txt')
+NrrwRgn-0.25.vmb: call delete('/home/knagendr/.vim/plugin/NrrwRgn.vim')|call delete('/home/knagendr/.vim/autoload/nrrwrgn.vim')|call delete('/home/knagendr/.vim/doc/NarrowRegion.txt')
+utl_3_0a.vba: call delete('/home/knagendr/.vim/doc/utl_usr.txt')|call delete('/home/knagendr/.vim/autoload/utl_lib.vim')|call delete('/home/knagendr/.vim/plugin/utl.vim')|call delete('/home/knagendr/.vim/plugin/utl_rc.vim')|call delete('/home/knagendr/.vim/plugin/utl_scm.vim')|call delete('/home/knagendr/.vim/plugin/utl_uri.vim')

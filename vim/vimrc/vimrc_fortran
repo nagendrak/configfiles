@@ -1,0 +1,23 @@
+" Following addition for correct syntax determination for *.f files.
+" The *.f files were being opened with the free source and hence the
+" colour syntax was not being recognized.
+let s:extfname = expand("%:e")
+if s:extfname ==? "f90"
+  filetype plugin on
+  let fortran_free_source=1
+  unlet! fortran_fixed_source
+elseif s:extfname ==? "tex"
+  filetype indent plugin on
+elseif s:extfname ==? "org"
+  filetype plugin indent on
+else
+  let fortran_fixed_source=1
+  unlet! fortran_free_source
+  filetype plugin on
+  filetype indent off
+" let fortran_fold=1
+" let fortran_fold_conditionals=1
+" let fortran_fold_multilinecomments=1
+endif
+
+
