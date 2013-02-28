@@ -23,3 +23,5 @@
 [user]
 	name = Nagendra Krishnamurthy
 	email = random@random.com
+[merge]
+	tool = vimdiff
