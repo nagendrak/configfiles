@@ -1,16 +1,15 @@
 *NrrwRgn.txt*   A Narrow Region Plugin (similar to Emacs)
 
 Author:  Christian Brabandt <cb@256bit.org>
-Version: 0.25 Tue, 08 Nov 2011 21:53:49 +0100
-
-Copyright: (c) 2009, 2010 by Christian Brabandt         
+Version: 0.31 Sat, 16 Feb 2013 22:28:31 +0100
+Copyright: (c) 2009, 2010, 2011, 2012 by Christian Brabandt         
            The VIM LICENSE applies to NrrwRgnPlugin.vim and NrrwRgnPlugin.txt
            (see |copyright|) except use NrrwRgnPlugin instead of "Vim".
            NO WARRANTY, EXPRESS OR IMPLIED.  USE AT-YOUR-OWN-RISK.
 
 
 ==============================================================================
-1. Contents                                     *NarrowRegion*  *NrrwRgnPlugin*
+1. Contents                                    *NarrowRegion*  *NrrwRgnPlugin*
 
         1.  Contents.....................................: |NrrwRgnPlugin|
         2.  NrrwRgn Manual...............................: |NrrwRgn-manual|
@@ -43,19 +42,26 @@ combination to open that selection in a new buffer.
 This plugin defines the following commands:
 
                                                         *:NarrowRegion* *:NR*
-:[range]NR
-:[range]NarrowRegion        When [range] is omitted, select only the current
+:[range]NR[!]
+:[range]NarrowRegion[!]     When [range] is omitted, select only the current
                             line, else use the lines in the range given and 
-                            open it in a new Scratch Window. 
+                            open it in a new Scratch Window.
+                            If the current line is selected and is on a folded
+                            region, select the whole folded text.
                             Whenever you are finished modifying that region
                             simply write the buffer.
+                            If ! is given, open the narrowed buffer not in a
+                            split buffer but in the current window.
 
                                                         *:NarrowWindow* *:NW*
-:NW
-:NarrowWindow               Select only the range that is visible the current
+:NW[!]
+:NarrowWindow[!]            Select only the range that is visible the current
                             window and open it in a new Scratch Window. 
                             Whenever you are finished modifying that region
                             simply write the buffer.
+                            If ! is given, open the narrowed buffer not in a
+                            split buffer but in the current window (works best
+                            with 'hidden' set).
 
                                                                 *:WidenRegion*
 :WidenRegion[!]             This command is only available in the narrowed 
@@ -65,8 +71,11 @@ This plugin defines the following commands:
                             closed, otherwise it will remain open.
 
                                                                         *:NRV*
-:NRV                        Opened the narrowed window for the region that was
+:NRV[!]                     Opened the narrowed window for the region that was
                             last selected in visual mode
+                            If ! is given, open the narrowed buffer not in a
+                            split buffer but in the current window (works best
+                            with 'hidden' set).
 
                                                                         *:NUD*
 
@@ -78,14 +87,16 @@ This plugin defines the following commands:
                             even different diff format)
 
                                                                   *:NRPrepare*
-:[range]NRPrepare
-:[range]NRP                 You can use this command, to mark several lines
+:[range]NRPrepare[!]
+:[range]NRP[!]              You can use this command, to mark several lines
                             that will later be put into a Narrowed Window
                             using |:NRM|.
+                            If the ! is used, all earlier selected lines will
+                            be cleared first.
 
                                                                   *:NRMulti*
 :NRMulti
-:NRM                        This command takes all lines, that have been
+:NRM[!]                     This command takes all lines, that have been
                             marked by |:NRP| and puts them together in a new
                             narrowed buffer.
                             When you write your changes back, all separate
@@ -93,6 +104,9 @@ This plugin defines the following commands:
                             This command also clears the list of marked lines,
                             that was created with |NRP|.
                             See also |NR-multi-example|.
+                            If ! is given, open the narrowed buffer not in a
+                            split buffer but in the current window (works best
+                            with 'hidden' set).
 
                                                     *:NRSyncOnWrite* *:NRS*
 :NRSyncOnWrite
@@ -107,6 +121,15 @@ This plugin defines the following commands:
                             narrowed buffer behaves like an ordinary buffer
                             that you can write in the filesystem.
                             (this is the default).
+
+                                                                    *:NRL*
+                
+:NRL[!]                     Reselect the last selected region again and open
+                            in a narrowed window. 
+                            If ! is given, open the narrowed buffer not in a
+                            split buffer but in the current window (works best
+                            with 'hidden' set).
+
 
 2.1 NrrwRgn HowTo                                                *NR-HowTo*
 -----------------
@@ -298,8 +321,61 @@ http://github.com/chrisbra/NrrwRgn
 Please don't hesitate to report any bugs to the maintainer, mentioned in the
 third line of this document.
 
+If you like the plugin, write me an email (look in the third line for my mail
+address). And if you are really happy, vote for the plugin and consider
+looking at my Amazon whishlist: http://www.amazon.de/wishlist/2BKAHE8J7Z6UW
+
 ==============================================================================
 4. NrrwRgn History                                          *NrrwRgn-history*
+
+
+0.31: Feb 16, 2013
+- NRM threw some errors (reported by pydave in
+  https://github.com/chrisbra/NrrwRgn/issues/17, thanks!)
+- don't create swapfiles (reported by ping, thanks!)
+
+0.30: Jan 25, 2013 {{{1
+- |NRL| throws erros, when used without having first narrowed a region
+- |NRV!| not allowed (reported by ping, thanks!)
+- when using single window narrowing, :w would jump back to the original
+  window. Only do this, when 'hidden' is not set (reported by ping, thanks!)
+- when narrowing a region, the last visual selected region wasn't correctly
+  restored (reported by ping, thanks!)
+- some code cleanup
+- recursive narrowing was broken, fix it (reported by ping, thanks!)
+
+0.29: Aug 20, 2012 {{{1
+- Use ! to have the narrowed buffer not opened in a new window (suggested by
+  Greg Sexton thanks!, issue #8
+  https://github.com/chrisbra/NrrwRgn/issues/8)
+- Fix mappings for visual mode (https://github.com/chrisbra/NrrwRgn/issues/9,
+  reported by Sung Pae, thanks!)
+- Fix problem with setting the filetype
+  (https://github.com/chrisbra/NrrwRgn/issues/10, reported by Hong Xu,
+  thanks!)
+- Fix some minor problems, when using ! mode
+0.28: Jun 03, 2012 {{{1
+- Plugin did not store last narrowed region when narrowed window was moved to
+  another tabpage (reported by Ben Fritz, thanks!)
+
+0.27: May 17, 2012 {{{1
+- When using |:NR| on a line that is folded, include the whole folded region
+  in the Narrowed window.
+- Better filetype detection for comments
+- Error handling, when doing |:NRM| without doing |:NRP| first
+- Use |:NRP!| to clear the old selection
+- Don't load the autoload script when sourcing the plugin script
+  (reported by Sergey Khorev, thanks!)
+- Vim 7.3.449 introduced E855, prevent this error.
+- |:NRL|
+- |NRM| did not correctly parse the list of lines provided by |:NRP|
+- highlighted pattern for blockwise visual narrowed regions was wrong
+- Saving blockwise visual selected regions back, could corrupt the contents
+
+0.26: Jan 02, 2012 {{{1
+
+- Fix issue https://github.com/chrisbra/NrrwRgn/issues/7
+  (reported by Alessio B., thanks!)
 
 
 0.25: Nov 08, 2011 {{{1

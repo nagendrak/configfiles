@@ -53,5 +53,7 @@ complete -cf man
 # Changing the default prompt, with some colours
 export PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
 
+export OMP_NUM_THREADS=1
+
 # Source local machine dependent settings
 source ~/.bashrc_local
