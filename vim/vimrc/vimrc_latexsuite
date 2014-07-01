@@ -15,4 +15,7 @@ set grepprg=grep\ -nH\ $*
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
-
+" Allowing commenting/uncommenting of selected blocks
+" Use the following to set comment type for the file. This should be
+" already part of the filetype plugin.
+au FileType tex let b:comment_leader = '% '

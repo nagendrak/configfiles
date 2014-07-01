@@ -1,0 +1,14 @@
+#+OPTIONS: LaTeX:t
+#+OPTIONS: H:10
+#+STYLE: <style type="text/css">
+#+STYLE:<!--/*--><![CDATA[/*><!--*/
+#+STYLE: div.figure { float:left; }
+#+STYLE: /*]]>*/-->
+#+STYLE: </style>
+#+title: Title
+#+startup: indent
+
+* First heading
+  Some text
+** Second heading
+   Some more text

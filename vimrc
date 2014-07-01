@@ -53,17 +53,12 @@ nmap <leader>f9 :set foldlevel=9<CR>
 set ruler                   " Line and Column number of cursor [OFF]
 
 " Miscellaneous vi settings
-set nobackup                " Set backup of files [OFF]
+set backup                  " Set backup of files [OFF]
 set backupdir=~/.backup     " Set temp dir for backup files
 "" Creating directories if they don't exist
 silent execute '!mkdir -p $HOME/.backup'
 set nocompatible            " Set vi-compatibility
 set mouse-=a                " Set mouse usage to off
-
-" Allowing commenting/uncommenting of selected blocks
-" Use the following to set comment type for the file. This should be
-" already part of the filetype plugin.
-au FileType tex let b:comment_leader = '% '
 
 "Menu items for Commenting and Un-Commenting code
 amenu 20.435 &Edit.-SEP4- :

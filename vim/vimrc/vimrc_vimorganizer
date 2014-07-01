@@ -2,6 +2,8 @@
 " Integrate the VimOrganizer specific sections into your own
 " vimrc if you wish to use VimOrganizer on a regular basis. . .
 
+autocmd BufNewFile  *.org    0r ~/.vim/templates/vimorg.org
+
 "===================================================================
 " THE NECESSARY STUFF
 " The three lines below are necessary for VimOrganizer to work right

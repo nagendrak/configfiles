@@ -98,7 +98,7 @@ setlocal expandtab
 setlocal nosmarttab
 setlocal softtabstop=0 
 setlocal foldcolumn=1 
-setlocal tabstop=4   
+setlocal tabstop=2
 setlocal shiftwidth=4
 setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\|^\\s*\\-\\s\\+
 if has("conceal")
