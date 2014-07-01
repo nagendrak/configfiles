@@ -10,7 +10,7 @@ elseif s:extfname ==? "tex"
   filetype indent plugin on
 elseif s:extfname ==? "org"
   filetype plugin indent on
-else
+elseif s:extfname ==? "f"
   let fortran_fixed_source=1
   unlet! fortran_free_source
   filetype plugin on
@@ -20,4 +20,6 @@ else
   let fortran_fold=1
   let fortran_fold_conditionals=1
 " let fortran_fold_multilinecomments=1
+  set colorcolumn=71
+  highlight ColorColumn ctermbg=darkgray
 endif

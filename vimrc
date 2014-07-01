@@ -2,10 +2,6 @@
 " Vim configuration file
 " -------------------------------------------------------------------
 
-source ~/.vim/vimrc/vimrc_latexsuite
-source ~/.vim/vimrc/vimrc_vimorganizer
-source ~/.vim/vimrc/vimrc_fortran
-
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
@@ -19,13 +15,14 @@ set nohls                   " Do not highlight search patterns [ON]
 map <leader>ss :setlocal spell!<cr>
 
 " Editing options
-set textwidth=70            " Restrict the column width [OFF]
+set textwidth=120           " Restrict the column width [OFF]
 
-set tabstop=2               " Set tab spacing [8]
+set tabstop=4               " Set tab spacing [8]
+set shiftwidth=4            " Set indent width
 set expandtab               " Use spaces, not tabs [OFF]
 
 set autoindent              " Retain indentation from previous line [OFF]
-"set smartindent             " Autoindent when starting new lines [OFF]
+set smartindent             " Autoindent when starting new lines [OFF]
 
 set showmatch               " Highlight matching braces briefly if present
 let loaded_matchparen = 1
@@ -49,6 +46,13 @@ nmap <leader>f6 :set foldlevel=6<CR>
 nmap <leader>f7 :set foldlevel=7<CR>
 nmap <leader>f8 :set foldlevel=8<CR>
 nmap <leader>f9 :set foldlevel=9<CR>
+
+
+source ~/.vim/vimrc/vimrc_latexsuite
+source ~/.vim/vimrc/vimrc_vimorganizer
+source ~/.vim/vimrc/vimrc_fortran
+source ~/.vim/vimrc/vimrc_cpp
+
 
 set ruler                   " Line and Column number of cursor [OFF]
 
