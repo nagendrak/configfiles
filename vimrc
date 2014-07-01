@@ -1,6 +1,10 @@
 " -------------------------------------------------------------------
 " Vim configuration file
 " -------------------------------------------------------------------
+source ~/.vim/vimrc/vimrc_latexsuite
+source ~/.vim/vimrc/vimrc_vimorganizer
+source ~/.vim/vimrc/vimrc_fortran
+source ~/.vim/vimrc/vimrc_cpp
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -46,13 +50,6 @@ nmap <leader>f6 :set foldlevel=6<CR>
 nmap <leader>f7 :set foldlevel=7<CR>
 nmap <leader>f8 :set foldlevel=8<CR>
 nmap <leader>f9 :set foldlevel=9<CR>
-
-
-source ~/.vim/vimrc/vimrc_latexsuite
-source ~/.vim/vimrc/vimrc_vimorganizer
-source ~/.vim/vimrc/vimrc_fortran
-source ~/.vim/vimrc/vimrc_cpp
-
 
 set ruler                   " Line and Column number of cursor [OFF]
 

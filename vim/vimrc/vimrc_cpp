@@ -6,6 +6,8 @@ let s:extfname = expand("%:e")
 
 if s:extfname ==? "cpp"
 
+    filetype plugin on
+
     set tags+=~/.vim/tags/cpp
     set tags+=~/.vim/tags/gl
     set tags+=~/.vim/tags/sdl
@@ -46,7 +48,4 @@ if s:extfname ==? "cpp"
     au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
     set completeopt=menuone,menu,longest,preview
     
-    colorscheme fnaqevan
-    " colorscheme gardener
-
 endif
