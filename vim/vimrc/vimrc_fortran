@@ -6,10 +6,6 @@ if s:extfname ==? "f90"
   filetype plugin on
   let fortran_free_source=1
   unlet! fortran_fixed_source
-elseif s:extfname ==? "tex"
-  filetype indent plugin on
-elseif s:extfname ==? "org"
-  filetype plugin indent on
 elseif s:extfname ==? "f"
   let fortran_fixed_source=1
   unlet! fortran_free_source

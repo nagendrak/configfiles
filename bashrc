@@ -10,7 +10,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-export CVSROOT=sysx3.arc.vt.edu:/home/knagendr/.cvsroot
 export CVSEDITOR=vim
 export CVS_RSH=ssh
 
@@ -29,6 +28,10 @@ esac
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+# make history really long
+HISTFILESIZE=1000000000
+HISTSIZE=1000000
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
