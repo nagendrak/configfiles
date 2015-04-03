@@ -21,13 +21,15 @@ set textwidth=120           " Restrict the column width [OFF]
 set tabstop=8               " Set tab (\t) spacing [8]
 set softtabstop=2           " Set tab (<tab>) spacing
 set shiftwidth=2            " Set indent width
-set expandtab               " Use spaces, not tabs [OFF]
+"set expandtab               " Use spaces, not tabs [OFF]
 
 set autoindent              " Retain indentation from previous line [OFF]
 set smartindent             " Autoindent when starting new lines [OFF]
 
 set showmatch               " Highlight matching braces briefly if present
 let loaded_matchparen = 1
+
+let Tlist_Inc_Winwidth=0
 
 syntax on                   " Set syntax colouring [OFF]
 set background=dark
@@ -38,6 +40,7 @@ highlight Comment term=bold ctermfg=2
 highlight Constant term=underline ctermfg=7
 set pastetoggle=<F2>
 nmap <silent> <leader>/ :nohlsearch<CR>
+nmap <silent> <leader>t :TlistHighlightTag<CR>
 
 """ Code folding options
 " nmap <leader><f0> :set foldlevel=0<CR>
@@ -57,7 +60,7 @@ set backup                  " Set backup of files [OFF]
 set backupdir=~/.backup     " Set temp dir for backup files
 "" Creating directories if they don't exist
 silent execute '!mkdir -p $HOME/.backup'
-set mouse-=a                " Set mouse usage to off
+" set mouse-=a                " Set mouse usage to off
 set backspace=2
 
 "Menu items for Commenting and Un-Commenting code
