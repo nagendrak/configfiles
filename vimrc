@@ -40,7 +40,11 @@ highlight Comment term=bold ctermfg=2
 highlight Constant term=underline ctermfg=7
 set pastetoggle=<F2>
 nmap <silent> <leader>/ :nohlsearch<CR>
+nmap <silent> <C-w>N :below new<CR>
+
+" Taglist shortcuts
 nmap <silent> <leader>t :TlistHighlightTag<CR>
+nmap <silent> <leader>T :TlistToggle<CR>
 
 """ Code folding options
 " nmap <leader><f0> :set foldlevel=0<CR>
