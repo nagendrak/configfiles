@@ -60,5 +60,6 @@ if s:extfname ==? "cc" || s:extfname ==? "cpp" || s:extfname==? "h"
     let loaded_matchparen = 0
 
     let g:EclimDisable = 1
+    " colorscheme ~/.vim/colors/colorscheme_template.vim
 
 endif
