@@ -42,10 +42,6 @@ set pastetoggle=<F2>
 nmap <silent> <leader>/ :nohlsearch<CR>
 nmap <silent> <C-w>N :below new<CR>
 
-" Taglist shortcuts
-nmap <silent> <leader>t :TlistHighlightTag<CR>
-nmap <silent> <leader>T :TlistToggle<CR>
-
 """ Code folding options
 " nmap <leader><f0> :set foldlevel=0<CR>
 " nmap <leader><f1> :set foldlevel=1<CR>
@@ -105,8 +101,26 @@ noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>/
 
 execute pathogen#infect()
 
+" Taglist shortcuts (not being used - see tagbar below)
+" nmap <silent> <leader>tt :TlistHighlightTag<CR>
+" nmap <silent> <leader>tT :TlistToggle<CR>
+
+" Tagbar shortcuts
+nmap <silent> <leader>th :TagbarShowTag<CR>
+nmap <silent> <leader>tt :TagbarToggle<CR>
+nmap <silent> <leader>tf :TagbarOpen j<CR>
+
 " Nerdtree settings
 let NERDTreeShowBookmarks=1
+nnoremap <silent> <Leader>nt :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>nf :NERDTreeFocus<CR>
+let NERDTreeQuitOnOpen = 1
+
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 source ~/.vim/vimrc/vimrc_latexsuite
 source ~/.vim/vimrc/vimrc_vimorganizer

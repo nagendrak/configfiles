@@ -32,7 +32,8 @@ endif
 
 " Option to choose leader key to execute gdb commands.
 if !exists('g:ConqueGdb_Leader')
-    let g:ConqueGdb_Leader = '<Leader>'
+    " let g:ConqueGdb_Leader = '<Leader>'
+    let g:ConqueGdb_Leader = '\'
 endif
 
 " Load python scripts now
