@@ -106,15 +106,20 @@ execute pathogen#infect()
 " nmap <silent> <leader>tT :TlistToggle<CR>
 
 " Tagbar shortcuts
-nmap <silent> <leader>th :TagbarShowTag<CR>
-nmap <silent> <leader>tt :TagbarToggle<CR>
-nmap <silent> <leader>tf :TagbarOpen j<CR>
+nnoremap <silent> <leader>th :TagbarShowTag<CR>
+nnoremap <silent> <leader>tt :TagbarToggle<CR>
+nnoremap <silent> <leader>tf :TagbarOpen j<CR>
 
 " Nerdtree settings
 let NERDTreeShowBookmarks=1
 nnoremap <silent> <Leader>nt :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>nf :NERDTreeFocus<CR>
-let NERDTreeQuitOnOpen = 1
+
+" Fugitive settings
+nnoremap <silent> <Leader>gd :Gdiff<CR>
+nnoremap <silent> <Leader>gs :Gstatus<CR>
+nnoremap <silent> <Leader>gl :Glog<CR>
+set diffopt+=vertical
 
 " Easy window navigation
 map <C-h> <C-w>h
