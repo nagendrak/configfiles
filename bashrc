@@ -60,3 +60,6 @@ export OMP_NUM_THREADS=1
 
 # Source local machine dependent settings
 source ~/.bashrc_local
+
+# added by Anaconda2 2.4.1 installer
+export PATH="/ptmp/packages/anaconda2/bin:$PATH"
