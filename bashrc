@@ -63,3 +63,6 @@ source ~/.bashrc_local
 
 # added by Anaconda2 2.4.1 installer
 export PATH="/ptmp/packages/anaconda2/bin:$PATH"
+
+# tmux - force tmux to use 256 colours
+alias tmux='tmux -2 -L newenv'
