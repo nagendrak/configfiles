@@ -65,4 +65,5 @@ source ~/.bashrc_local
 export PATH="/ptmp/packages/anaconda2/bin:$PATH"
 
 # tmux - force tmux to use 256 colours
-alias tmux='tmux -2 -L newenv'
+#alias tmux='tmux -2 -L newenv'
+alias tmux='tmux -2'

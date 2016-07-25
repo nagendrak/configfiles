@@ -9,7 +9,7 @@
 dir=~/configfiles # configfiles directory
 olddir=~/.configfiles_old # old configfiles backup directory
 files="bashrc vimrc vim gitconfig screenrc tmux.conf git-completion.bash
-dircolors" # list of files/folders to symlink in homedir
+dircolors tmux" # list of files/directories to symlink in homedir
 
 ##########
 

@@ -123,6 +123,7 @@ set diffopt+=vertical
 
 " Easy window navigation
 let g:BASH_Ctrl_j = 'off'
+let g:C_Ctrl_j = 'off'
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
