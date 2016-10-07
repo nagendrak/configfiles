@@ -133,3 +133,5 @@ source ~/.vim/vimrc/vimrc_latexsuite
 source ~/.vim/vimrc/vimrc_vimorganizer
 source ~/.vim/vimrc/vimrc_fortran
 source ~/.vim/vimrc/vimrc_cpp
+
+runtime macros/matchit.vim " Enable the matchit plugin - smarter parantheses matching!
