@@ -35,10 +35,13 @@ HISTSIZE=1000000
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
+HISTCONTROL=ignoreboth:erasedups:ignorespace
 
 # append to the history file, don't overwrite it
 shopt -s histappend
+
+# Allow use of ctrl-s for forward searching command history
+stty -ixon
 
 # Bash auto-completion paths
 source ~/.git-completion.bash

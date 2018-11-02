@@ -10,6 +10,7 @@ set nocompatible            " Set vi-compatibility
 
 set ignorecase              " Ignore case during searches [OFF]
 set nohls                   " Do not highlight search patterns [ON]
+set incsearch		    " Enable incremental search
 
 "set spell                   " Checks spelling [OFF]
 "Pressing ,ss will toggle and untoggle spell checking
@@ -39,8 +40,9 @@ colorscheme koehler
 highlight Comment term=bold ctermfg=2
 highlight Constant term=underline ctermfg=7
 set pastetoggle=<F2>
-nmap <silent> <leader>/ :nohlsearch<CR>
+nmap <silent> <leader>/ :set hlsearch!<CR>
 nmap <silent> <C-w>N :below new<CR>
+nmap <C-N><C-N> :set invnumber<CR>
 
 """ Code folding options
 " nmap <leader><f0> :set foldlevel=0<CR>
@@ -141,9 +143,12 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
+set tags+=~/.vimtags
+
 source ~/.vim/vimrc/vimrc_latexsuite
 source ~/.vim/vimrc/vimrc_vimorganizer
 source ~/.vim/vimrc/vimrc_fortran
 source ~/.vim/vimrc/vimrc_cpp
+source ~/.vim/vimrc/vimrc_python
 
 runtime macros/matchit.vim " Enable the matchit plugin - smarter parantheses matching!

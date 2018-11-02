@@ -1,0 +1,17 @@
+"au BufNewFile,BufRead *.py
+
+let s:extfname = expand("%:e")
+
+if s:extfname ==? "py" || s:extfname ==? "pyc"
+
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
+    set expandtab
+    set textwidth=79
+    set autoindent
+    set fileformat=unix
+
+    "filetype plugin indent on
+
+endif
