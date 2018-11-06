@@ -9,8 +9,6 @@ let s:extfname = expand("%:e")
 if s:extfname ==? "cc" || s:extfname ==? "cpp" || s:extfname==? "h"
 
     set nosmartindent
-    set tabstop=8
-    set expandtab
     filetype plugin indent on
 
     " set tags+=~/.vim/tags/cpp
@@ -66,4 +64,8 @@ if s:extfname ==? "cc" || s:extfname ==? "cpp" || s:extfname==? "h"
 
     " colorscheme ~/.vim/colors/colorscheme_template.vim
 
+    set tabstop=2               " Set tab (\t) spacing [8]
+    set softtabstop=2           " Set tab (<tab>) spacing
+    set shiftwidth=2            " Set indent width
+    set expandtab
 endif

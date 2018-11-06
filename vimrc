@@ -152,3 +152,7 @@ source ~/.vim/vimrc/vimrc_cpp
 source ~/.vim/vimrc/vimrc_python
 
 runtime macros/matchit.vim " Enable the matchit plugin - smarter parantheses matching!
+
+" Allow for local vimrc to over-ride for project related settings
+set exrc
+set secure
