@@ -63,7 +63,7 @@ set backup                  " Set backup of files [OFF]
 set backupdir=~/.backup     " Set temp dir for backup files
 "" Creating directories if they don't exist
 silent execute '!mkdir -p $HOME/.backup'
-" set mouse-=a                " Set mouse usage to off
+set mouse-=a                " Set mouse usage to off
 set backspace=2
 
 "Menu items for Commenting and Un-Commenting code
