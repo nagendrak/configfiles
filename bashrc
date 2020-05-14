@@ -67,3 +67,6 @@ source ~/.bashrc_local
 # tmux - force tmux to use 256 colours
 #alias tmux='tmux -2 -L newenv'
 alias tmux='tmux -2'
+
+#helps arrange output into nice columns
+alias ct='column -t'
