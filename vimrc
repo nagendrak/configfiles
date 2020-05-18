@@ -7,6 +7,7 @@ let mapleader = ","
 let g:mapleader = ","
 
 set nocompatible            " Set vi-compatibility
+filetype plugin on
 
 set ignorecase              " Ignore case during searches [OFF]
 set nohls                   " Do not highlight search patterns [ON]
@@ -130,6 +131,12 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" VimWiki remapping for splitting
+nmap <Leader>we :VimwikiSplitLink<CR>
+nmap <Leader>wq :VimwikiVSplitLink<CR>
+let g:vimwiki_list = [{
+  \ 'path_html': '~/vimwiki/html'}]
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
