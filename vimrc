@@ -63,7 +63,7 @@ set backup                  " Set backup of files [OFF]
 set backupdir=~/.backup     " Set temp dir for backup files
 "" Creating directories if they don't exist
 silent execute '!mkdir -p $HOME/.backup'
-" set mouse-=a                " Set mouse usage to off
+set mouse-=a                " Set mouse usage to off
 set backspace=2
 
 "Menu items for Commenting and Un-Commenting code
@@ -133,10 +133,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " VimWiki remapping for splitting
-nmap <Leader>we :VimwikiSplitLink<CR>
-nmap <Leader>wq :VimwikiVSplitLink<CR>
-let g:vimwiki_list = [{
-  \ 'path_html': '~/vimwiki/html'}]
+nmap <leader>we :VimwikiSplitLink<CR>
+nmap <leader>wq :VimwikiVSplitLink<CR>
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
@@ -157,6 +155,7 @@ source ~/.vim/vimrc/vimrc_vimorganizer
 source ~/.vim/vimrc/vimrc_fortran
 source ~/.vim/vimrc/vimrc_cpp
 source ~/.vim/vimrc/vimrc_python
+source ~/.vimrc_local
 
 runtime macros/matchit.vim " Enable the matchit plugin - smarter parantheses matching!
 
