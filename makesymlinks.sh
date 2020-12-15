@@ -32,3 +32,6 @@ for file in $files; do
   echo "Creating symlink to $file in home directory."
   ln -s $dir/$file ~/.$file
 done
+
+# Create empty _local files
+touch ~/.vimrc_local
