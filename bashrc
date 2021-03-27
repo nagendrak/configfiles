@@ -41,7 +41,7 @@ HISTCONTROL=ignoreboth:erasedups:ignorespace
 shopt -s histappend
 
 # Allow use of ctrl-s for forward searching command history
-stty -ixon
+[[ $- == *i* ]] && stty -ixon
 
 # Bash auto-completion paths
 source ~/.git-completion.bash
