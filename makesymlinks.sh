@@ -35,3 +35,4 @@ done
 
 # Create empty _local files
 touch ~/.vimrc_local
+touch ~/.bashrc_local
