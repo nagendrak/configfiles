@@ -23,6 +23,15 @@ echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
+# Detect git version number to load appropriate completion file
+GIT_VERSION=$(git --version | cut -d' ' -f3)
+DEFAULT_GIT_VERSION=2.30.2
+if [ -f $dir/git-completion.bash_v$GIT_VERSION ]; then
+  ln -s $dir/git-completion.bash_v$GIT_VERSION $dir/git-completion.bash
+else
+  ln -s $dir/git-completion.bash_v$DEFAULT_GIT_VERSION $dir/git-completion.bash
+fi
+
 # move any existing configfiles in homedir to configfiles_old directory,
 # then create symlinks from the homedir to any files in the ~/configfiles
 # directory specified in $files
