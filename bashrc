@@ -5,7 +5,8 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=always'
+    #alias grep='grep --color=always'
+    alias grep='grep --color=auto' # always causes redirected output to have special characters
     alias fgrep='fgrep --color=always'
     alias egrep='egrep --color=always'
 fi
@@ -70,3 +71,7 @@ alias tmux='tmux -2'
 
 #helps arrange output into nice columns
 alias ct='column -t'
+
+#expand aliases for paths
+shopt -s direxpand
+shopt -s expand_aliases

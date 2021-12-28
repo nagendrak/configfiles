@@ -6,7 +6,7 @@
 # COLOR needs one of these arguments: 'tty' colorizes output to ttys, but not
 # pipes. 'all' adds color characters to all output. 'none' shuts colorization
 # off.
-COLOR tty
+COLOR all
 
 # Extra command line options for ls go here.
 # Basically these ones are:
@@ -29,6 +29,7 @@ TERM con80x50
 TERM con80x60
 TERM cons25
 TERM xterm
+TERM xterm-256color
 TERM rxvt
 TERM xterm-color
 TERM color-xterm

@@ -38,8 +38,15 @@ set background=dark
 set foldmethod=syntax       " Set folding method to syntax [manual]
 colorscheme koehler
 "let $myscheme=$VIMRUNTIME . '\colors\koehler.vim'
-highlight Comment term=bold ctermfg=2
+"highlight Comment term=bold ctermfg=2
+highlight Comment cterm=none term=none ctermfg=2
 highlight Constant term=underline ctermfg=7
+highlight TabLineFill ctermfg=LightBlue ctermbg=DarkBlue
+highlight TabLine ctermfg=Blue ctermbg=Black
+highlight TabLineSel ctermfg=Red ctermbg=Yellow
+highlight Title ctermfg=LightBlue ctermbg=Magenta
+highlight PreProc ctermfg=magenta cterm=bold guifg=#FF00FF
+
 set pastetoggle=<F2>
 nmap <silent> <leader>/ :set hlsearch!<CR>
 nmap <silent> <C-w>N :below new<CR>
