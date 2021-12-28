@@ -25,10 +25,12 @@ echo "...done"
 
 # Detect git version number to load appropriate completion file
 GIT_VERSION=$(git --version | cut -d' ' -f3)
-DEFAULT_GIT_VERSION=2.30.2
 if [ -f $dir/git-completion.bash_v$GIT_VERSION ]; then
   ln -s $dir/git-completion.bash_v$GIT_VERSION $dir/git-completion.bash
 else
+  # If file corresponding to local git version is unavailable, issue warning
+  # and use earliest available version (to be safe)
+  DEFAULT_GIT_VERSION=2.20.1
   ln -s $dir/git-completion.bash_v$DEFAULT_GIT_VERSION $dir/git-completion.bash
 fi
 
