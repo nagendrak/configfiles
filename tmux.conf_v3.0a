@@ -51,10 +51,10 @@ bind -r K resize-pane -U 5
 bind -r L resize-pane -R 5
 
 # Colourizing panes
-set -g pane-border-fg colour235
-set -g pane-border-bg black
-set -g pane-active-border-fg colour240
-set -g pane-active-border-bg yellow
+set -g pane-border-style fg=colour235
+set -g pane-border-style bg=black
+set -g pane-active-border-style fg=colour240
+set -g pane-active-border-style bg=yellow
 
 # Maximizing current pane
 unbind z
@@ -71,13 +71,13 @@ set -g status-bg black
 set -g status-justify centre
 
 setw -g window-status-format "#[fg=normal]#I$ #W"
-setw -g window-status-fg colour241
-setw -g window-status-bg default
-setw -g window-status-attr dim
+setw -g window-status-style fg=colour241
+setw -g window-status-style bg=default
+setw -g window-status-style dim
 
-setw -g window-status-current-fg red
-setw -g window-status-current-bg default
-#setw -g window-status-current-attr default
+setw -g window-status-current-style fg=red
+setw -g window-status-current-style bg=default
+#setw -g window-status-current-style default
 setw -g window-status-current-format "#[fg=red]{ #[fg=colour231]#I$ #W#[fg=red] }"
 
 setw -g monitor-activity on
@@ -91,19 +91,12 @@ set -g status-left "#[fg=colour82][ #[fg=brightgreen]#(echo $HOSTNAME) #[fg=colo
 set -g status-right "#[fg=colour82][#[fg=brightblue] %d %b %Y #[fg=colour231]%H:%M #[fg=colour82]]"
 
 #####----- Command-line stuff -----#####
-set -g message-fg white
-set -g message-bg black
-set -g message-attr bright
+set -g message-style fg=white
+set -g message-style bg=black
+set -g message-style bright
 
 # tmux buffer to work with vi-like keys
 set-window-option -g mode-keys vi
-# Some of the keybindings have changed since version 2.4
-run-shell "tmux setenv -g TMUX_VERSION $(tmux -V | cut -c 6-)"
-if-shell -b '[ "$(echo "$TMUX_VERSION < 2.4" | bc)" = 1 ]' \
-  "bind-key -t vi-copy 'v' begin-selection; \
-  bind-key -t vi-copy 'r' rectangle-toggle; \
-  bind-key -t vi-copy 'y' copy-pipe 'xclip -in -selection clipboard'"
-if-shell -b '[ "$(echo "$TMUX_VERSION >= 2.4" | bc)" = 1 ]' \
-  "bind-key -T copy-mode-vi 'v' send -X begin-selection; \
-  bind-key -T copy-mode-vi 'r' send -X rectangle-toggle; \
-  bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'"
+bind-key -T copy-mode-vi 'v' send -X begin-selection;
+bind-key -T copy-mode-vi 'r' send -X rectangle-toggle;
+bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'

@@ -34,6 +34,15 @@ else
   ln -s $dir/git-completion.bash_v$DEFAULT_GIT_VERSION $dir/git-completion.bash
 fi
 
+# Detect tmux version number to load appropriate configuration file
+TMUX_VERSION=$(tmux -V | cut -d' ' -f2)
+if [ -f $dir/tmux.conf_v$TMUX_VERSION ]; then
+  ln -s $dir/tmux.conf_v$TMUX_VERSION $dir/tmux.conf
+else
+  DEFAULT_GIT_VERSION=1.9
+  ln -s $dir/tmux.conf_v$DEFAULT_TMUX_VERSION $dir/tmux.conf
+fi
+
 # move any existing configfiles in homedir to configfiles_old directory,
 # then create symlinks from the homedir to any files in the ~/configfiles
 # directory specified in $files
