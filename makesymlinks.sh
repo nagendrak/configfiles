@@ -39,7 +39,7 @@ TMUX_VERSION=$(tmux -V | cut -d' ' -f2)
 if [ -f $dir/tmux.conf_v$TMUX_VERSION ]; then
   ln -s $dir/tmux.conf_v$TMUX_VERSION $dir/tmux.conf
 else
-  DEFAULT_GIT_VERSION=1.9
+  DEFAULT_TMUX_VERSION=1.9
   ln -s $dir/tmux.conf_v$DEFAULT_TMUX_VERSION $dir/tmux.conf
 fi
 
