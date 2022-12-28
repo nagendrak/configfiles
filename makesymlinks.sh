@@ -23,6 +23,10 @@ echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
+# remove any previous symbolic links
+echo "Removing any previous symbolic links"
+rm $dir/git-completion.bash $dir/tmux.conf
+
 # Detect git version number to load appropriate completion file
 GIT_VERSION=$(git --version | cut -d' ' -f3)
 if [ -f $dir/git-completion.bash_v$GIT_VERSION ]; then
@@ -35,7 +39,7 @@ else
 fi
 
 # Detect tmux version number to load appropriate configuration file
-TMUX_VERSION=$(tmux -V | cut -d' ' -f2)
+TMUX_VERSION=$(tmux -V | cut -d' ' -f2 | cut -c1-1)
 if [ -f $dir/tmux.conf_v$TMUX_VERSION ]; then
   ln -s $dir/tmux.conf_v$TMUX_VERSION $dir/tmux.conf
 else
