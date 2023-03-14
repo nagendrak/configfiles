@@ -9,7 +9,7 @@
 dir=~/configfiles # configfiles directory
 olddir=~/.configfiles_old # old configfiles backup directory
 files="bashrc vimrc vim gitconfig screenrc tmux.conf git-completion.bash
-dircolors tmux gdbinit" # list of files/directories to symlink in homedir
+dircolors tmux gdbinit fonts" # list of files/directories to symlink in homedir
 
 ##########
 
@@ -60,3 +60,6 @@ done
 # Create empty _local files
 touch ~/.vimrc_local
 touch ~/.bashrc_local
+
+# Cache newly added fonts
+fc-cache -v -f
