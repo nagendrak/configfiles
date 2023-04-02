@@ -109,28 +109,6 @@ noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>/
 " text files.
 " au BufRead,BufNewFile *.txt,*.tex set wrap linebreak nolist textwidth=0 wrapmargin=0
 
-execute pathogen#infect()
-
-" Taglist shortcuts (not being used - see tagbar below)
-" nmap <silent> <leader>tt :TlistHighlightTag<CR>
-" nmap <silent> <leader>tT :TlistToggle<CR>
-
-" Tagbar shortcuts
-nnoremap <silent> <leader>th :TagbarShowTag<CR>
-nnoremap <silent> <leader>tt :TagbarToggle<CR>
-nnoremap <silent> <leader>tf :TagbarOpen j<CR>
-
-" Nerdtree settings
-let NERDTreeShowBookmarks=1
-nnoremap <silent> <Leader>nt :NERDTreeToggle<CR>
-nnoremap <silent> <Leader>nf :NERDTreeFocus<CR>
-
-" Fugitive settings
-nnoremap <silent> <Leader>gd :Gdiff<CR>
-nnoremap <silent> <Leader>gs :Gstatus<CR>
-nnoremap <silent> <Leader>gl :Glog<CR>
-set diffopt+=vertical
-
 " Easy window navigation
 let g:BASH_Ctrl_j = 'off'
 let g:C_Ctrl_j = 'off'
@@ -138,10 +116,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" VimWiki remapping for splitting
-nmap <leader>we :VimwikiSplitLink<CR>
-nmap <leader>wq :VimwikiVSplitLink<CR>
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
@@ -164,8 +138,36 @@ source ~/.vim/vimrc/vimrc_cpp
 source ~/.vim/vimrc/vimrc_python
 source ~/.vimrc_local
 
-runtime macros/matchit.vim " Enable the matchit plugin - smarter parantheses matching!
-
 " Allow for local vimrc to over-ride for project related settings
 set exrc
 set secure
+
+"---------------------------------"
+" OLD MAPPINGS FOR UNUSED PLUGINS "
+"---------------------------------"
+" " Taglist shortcuts (not being used - see tagbar below)
+" " nmap <silent> <leader>tt :TlistHighlightTag<CR>
+" " nmap <silent> <leader>tT :TlistToggle<CR>
+" 
+" " Tagbar shortcuts
+" nnoremap <silent> <leader>th :TagbarShowTag<CR>
+" nnoremap <silent> <leader>tt :TagbarToggle<CR>
+" nnoremap <silent> <leader>tf :TagbarOpen j<CR>
+" 
+" " Nerdtree settings
+" let NERDTreeShowBookmarks=1
+" nnoremap <silent> <Leader>nt :NERDTreeToggle<CR>
+" nnoremap <silent> <Leader>nf :NERDTreeFocus<CR>
+" 
+" " Fugitive settings
+" nnoremap <silent> <Leader>gd :Gdiff<CR>
+" nnoremap <silent> <Leader>gs :Gstatus<CR>
+" nnoremap <silent> <Leader>gl :Glog<CR>
+" set diffopt+=vertical
+" 
+" " VimWiki remapping for splitting
+" nmap <leader>we :VimwikiSplitLink<CR>
+" nmap <leader>wq :VimwikiVSplitLink<CR>
+" 
+" runtime macros/matchit.vim " Enable the matchit plugin - smarter parantheses matching!
+
