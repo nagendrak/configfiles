@@ -57,6 +57,10 @@ for file in $files; do
   ln -s $dir/$file ~/.$file
 done
 
+# Custom locations for directories (not ~/.)
+mv ~/.config/nvim $olddir/.
+ln -s $dir/nvim ~/.config/nvim
+
 # Create empty _local files
 touch ~/.vimrc_local
 touch ~/.bashrc_local
