@@ -2,3 +2,4 @@ vim/.netrwhist
 *.swp
 git-completion.bash
 tmux.conf
+dev-container/neovim_data/**

@@ -29,6 +29,7 @@ RUN apt-get update && apt-get install -y \
     cmake \
     xz-utils \
     gosu \
+    default-jdk-headless \
     && apt-get clean
 
 # ----------- NEOVIM INSTALL --------------------
