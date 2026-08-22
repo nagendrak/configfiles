@@ -95,6 +95,9 @@ set -g message-style fg=white
 set -g message-style bg=black
 set -g message-style bright
 
+# Enable OSC 52 clipboard pass-through
+set -s set-clipboard on
+
 # tmux buffer to work with vi-like keys
 set-window-option -g mode-keys vi
 bind-key -T copy-mode-vi 'v' send -X begin-selection;
