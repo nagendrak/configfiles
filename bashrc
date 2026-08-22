@@ -75,3 +75,5 @@ alias ct='column -t'
 #expand aliases for paths
 shopt -s direxpand
 shopt -s expand_aliases
+
+. "$HOME/.local/share/../bin/env"
