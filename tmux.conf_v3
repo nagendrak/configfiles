@@ -31,12 +31,13 @@ bind o last-window
 # bind | split-window -h -c '#{pane_current_path}'
 # bind - split-window -v -c '#{pane_current_path}'
 
-# Following is for tmux version < 1.8
-# bind-key c new-window -c '' \; command-prompt -p name: 'rename-window %1'
-bind-key c command-prompt -p "window name:" "new-window -c '' \; rename-window '%%'"
+# Create new window with prompt for name, starting in current pane path
+bind-key c command-prompt -p "window name:" "new-window -c '#{pane_current_path}' -n '%%'"
+
+# Split windows in current pane path
 unbind %
-bind | split-window -h -c ''
-bind - split-window -v -c ''
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
 
 # Mappings for moving around different panes
 bind h select-pane -L
