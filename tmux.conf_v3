@@ -103,3 +103,9 @@ set-window-option -g mode-keys vi
 bind-key -T copy-mode-vi 'v' send -X begin-selection;
 bind-key -T copy-mode-vi 'r' send -X rectangle-toggle;
 bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+
+# Enable mouse scrolling (scroll with mouse wheel directly)
+set -g mouse on
+
+# Increase scrollback buffer limit (default is often only 2000 lines)
+set -g history-limit 50000
