@@ -3,3 +3,4 @@ vim/.netrwhist
 git-completion.bash
 tmux.conf
 dev-container/neovim_data/**
+.env.local
