@@ -77,3 +77,7 @@ shopt -s direxpand
 shopt -s expand_aliases
 
 . "$HOME/.local/share/../bin/env"
+
+
+# Added by Antigravity CLI installer
+export PATH="$HOME/.local/bin:$PATH"
